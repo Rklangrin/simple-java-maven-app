@@ -7,20 +7,21 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
-                sh 'mvn -DskipTests clean package'
+                sh 'echo $JAVA_HOME'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Testing...'
-                sh 'mvn test'
+                sh 'pwd'
             }
         }
 
         stage('Deploy') {
             steps {
                 echo 'Deploying...'
+                sh 'ls'
             }
         }
     }
