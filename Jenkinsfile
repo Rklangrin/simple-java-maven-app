@@ -7,12 +7,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building...'
+                mvn -DskipTests clean package
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Testing...'
+                mvn test
             }
         }
 
